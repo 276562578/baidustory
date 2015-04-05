@@ -33,7 +33,7 @@ def get_article(page_address):
         article_html=[]
         crude_article=[]
         article=[]
-	for p in range(2):        
+	for p in range(len(page_address)):        
                 article_html.append(urllib2.urlopen(page_address[p]).read().decode("utf-8"))
                 print "正在添加第"+str(p+1)+"篇文章"
                 find_crude_article=re.compile(r'd_post_content j_d_post_content.*?share_thread share_thread_wrapper')
